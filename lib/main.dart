@@ -1,10 +1,14 @@
-import 'dart:io';
+import 'dart:io'  ;
+import 'dart:async';
 
+import 'package:cab_rider/dataproviders/appdata.dart';
 import 'package:cab_rider/screens/loginpage.dart';
 import 'package:cab_rider/screens/mainpage.dart';
 import 'package:cab_rider/screens/registrationpage.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,21 +32,24 @@ Future<void> main() async {
   );
 runApp(MyApp());
 }
+
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(fontFamily: 'Brand-Regular',
-        primarySwatch: Colors.blue,
-      ),
-      initialRoute: RegistrationPage.id,
-      routes: {
-        RegistrationPage.id: (context) => RegistrationPage(),
-        LoginPage.id:(context) => LoginPage(),
-        MainPage.id:(context) => MainPage()
+    return ChangeNotifierProvider(create: (context)=> AppData(),
+      child: MaterialApp(
+        theme: ThemeData(fontFamily: 'Brand-Regular',
+          primarySwatch: Colors.blue,
+        ),
+        initialRoute: MainPage.id,
+        routes: {
+          RegistrationPage.id: (context) => RegistrationPage(),
+          LoginPage.id:(context) => LoginPage(),
+          MainPage.id:(context) => MainPage()
 
-      },
+        },
+      ),
     );
   }
 }

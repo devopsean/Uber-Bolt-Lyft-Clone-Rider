@@ -1,6 +1,7 @@
 import 'package:cab_rider/brand_colors.dart';
 import 'package:cab_rider/screens/loginpage.dart';
 import 'package:cab_rider/screens/mainpage.dart';
+import 'package:cab_rider/widgets/ProgressDialog.dart';
 import 'package:cab_rider/widgets/TaxiButton.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -40,16 +41,26 @@ class _RegistrationPageState extends State<RegistrationPage> {
   var passwordController = TextEditingController();
 
   void registerUser() async {
+    //show please wait dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) => ProgressDialog(
+        status: 'Registering you',
+      ),
+    );
     final User user = (await _auth
             .createUserWithEmailAndPassword(
       email: emailController.text,
       password: passwordController.text,
     )
             .catchError((ex) {
+      //check errors and display message
+      Navigator.pop(context);
       PlatformException thisEx = ex;
       showSnackBar(thisEx.message);
     }))
         .user;
+    Navigator.pop(context);
 //check if user registration is successful
     if (user != null) {
       DatabaseReference newUserRef =
@@ -63,7 +74,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
       newUserRef.set(userMap);
 
       //Take user to mainPage
-      Navigator.pushNamedAndRemoveUntil(context, MainPage.id, (route) => false);
+      Navigator.pushNamedAndRemoveUntil(
+          context, LoginPage.id, (route) => false);
     }
   }
 
@@ -181,7 +193,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           var connectivityResult =
                               await Connectivity().checkConnectivity();
                           if (connectivityResult != ConnectivityResult.mobile &&
-                              ConnectivityResult != ConnectivityResult.wifi) {
+                              connectivityResult != ConnectivityResult.wifi) {
                             showSnackBar('No internet connection');
                             return;
                           }
