@@ -32,11 +32,11 @@ To deploy this project:
 ## Screenshots
 
 <div>
-<img src="https://github.com/seanFlutter/Resources/blob/main/Uber-bolt-lyft/driver%20register.png" alt="feed example" width="200">
-<img src="https://github.com/seanFlutter/Resources/blob/main/Uber-bolt-lyft/driver%20login.png" alt="feed example" width="200">
-<img src="https://github.com/seanFlutter/Resources/blob/main/Uber-bolt-lyft/driver%20homepage%20offline.png" alt="feed example" width="200">
-<img src="https://github.com/seanFlutter/Resources/blob/main/Uber-bolt-lyft/driver%20homepage%20online.png" alt="feed example" width="200">
-<img src="https://github.com/seanFlutter/Resources/blob/main/Uber-bolt-lyft/driver%20earnings.png" alt="feed example" width="200">
+<img src="https://github.com/seanFlutter/Resources/blob/main/Uber-bolt-lyft/uber%20rider%20login.png" alt="feed example" width="200">
+<img src="https://github.com/seanFlutter/Resources/blob/main/Uber-bolt-lyft/rider%20drawer.png" alt="feed example" width="200">
+<img src="https://github.com/seanFlutter/Resources/blob/main/Uber-bolt-lyft/rider%20request.png" alt="feed example" width="200">
+<img src="https://github.com/seanFlutter/Resources/blob/main/Uber-bolt-lyft/uber%20rider%20request1.png" alt="feed example" width="200">
+<img src="https://github.com/seanFlutter/Resources/blob/main/Uber-bolt-lyft/uber%20rider%20request2.png" alt="feed example" width="200">
 </div>
 
   
