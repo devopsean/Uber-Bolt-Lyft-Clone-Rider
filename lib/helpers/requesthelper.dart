@@ -14,8 +14,9 @@ class RequestHelper {
         return 'failed';
       }
     } catch (e) {
-      return 'failed';
+    //  return 'failed';
       print(e);
+
     }
   }
 }

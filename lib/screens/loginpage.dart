@@ -18,6 +18,12 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+   // login();
+  }
   final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
 
   void showSnackBar(String title) {
@@ -47,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
     );
     final UserCredential result = await FirebaseAuth.instance
         .signInWithEmailAndPassword(
-            email: "onuohasean@yahoo.com", password: "Akpambo007.")
+            email: "seank@yahoo.com", password: "aaaaaaaaaa")
         .catchError((ex) {
       Navigator.pop(context);
       PlatformException thisEx = ex;
@@ -55,20 +61,21 @@ class _LoginPageState extends State<LoginPage> {
     });
     User user = result.user;
     if (user != null) {
-      print('yooooooooooooooooooooooooooooooooooooooostooososososidursoidf');
+
       //verify login
-      // Navigator.pushNamed(context, MainPage.id);
+
       DatabaseReference userRef =
-          FirebaseDatabase.instance.reference().child('user/${user.uid}');
+          FirebaseDatabase.instance.reference().child('users/${user.uid}');
       //print(userRef);
       userRef.once().then((DataSnapshot snapshot) {
         if (snapshot.value != null) {
+
           Navigator.pushNamedAndRemoveUntil(
               context, MainPage.id, (route) => false);
         }
       });
     } else {
-      print('ssssssssssssssssssssssssssssssssssssssssssssss');
+
     }
     //any need for this second exception? diff btw two
 
@@ -179,7 +186,7 @@ class _LoginPageState extends State<LoginPage> {
                     ],
                   ),
                 ),
-                FlatButton(
+                TextButton(
                   onPressed: () {
                     Navigator.pushNamedAndRemoveUntil(
                         context, RegistrationPage.id, (route) => false);

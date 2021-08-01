@@ -64,7 +64,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
 //check if user registration is successful
     if (user != null) {
       DatabaseReference newUserRef =
-          FirebaseDatabase.instance.reference().child('user/${user.uid}');
+          FirebaseDatabase.instance.reference().child('users/${user.uid}');
       //Prepare data to be saved on user's table
       Map userMap = {
         'fullname': fullNameController.text,
@@ -75,7 +75,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
 
       //Take user to mainPage
       Navigator.pushNamedAndRemoveUntil(
-          context, LoginPage.id, (route) => false);
+          context, MainPage.id, (route) => false);
     }
   }
 
@@ -217,7 +217,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     ],
                   ),
                 ),
-                FlatButton(
+                TextButton(
                   onPressed: () {
                     Navigator.pushNamedAndRemoveUntil(
                         context, LoginPage.id, (route) => false);

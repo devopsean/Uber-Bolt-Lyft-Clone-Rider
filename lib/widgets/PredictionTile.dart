@@ -29,7 +29,6 @@ class PredictionTile extends StatelessWidget {
       return;
     }
     if (response['status'] == 'OK') {
-      print('response status is okayyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy');
       Address thisPlace = Address();
       thisPlace.placeName = response['result']['name'];
       thisPlace.placeId = placeId;
@@ -40,13 +39,12 @@ class PredictionTile extends StatelessWidget {
           .updateDestinationAddress(thisPlace);
       print(thisPlace.placeName);
       Navigator.pop(context, 'getDirection');
-    }
+    } else {}
   }
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
-      padding: EdgeInsets.all(0),
+    return TextButton(
       onPressed: () {
         getPlaceDetails(prediction.placeId, context);
       },
