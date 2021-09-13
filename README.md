@@ -48,8 +48,8 @@ To deploy this project:
 
 **IDE:** Android Studio
 
-## Contributions
+## Thanks
 
-I look forward to your pull requests.
+Uchenna Nnodim.
 
   
