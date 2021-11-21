@@ -39,8 +39,8 @@ To deploy this project:
 <img src="https://github.com/seanFlutter/Resources/blob/main/Uber-bolt-lyft/uber%20rider%20request2.png" alt="feed example" width="200">
  
 </div>
- <img alt="GIF" src="https://github.com/seanFlutter/Resources/blob/main/Uber-bolt-lyft/lyft%20rider%20demo.gif
-?raw=true" width="200" />
+ <img align="right" alt="GIF" src="https://github.com/seanFlutter/Resources/blob/main/Uber-bolt-lyft/lyft%20rider%20demo.gif?raw=true" width="375" height="240" />
+
   
 ## Tech Stack
 
