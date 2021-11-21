@@ -40,8 +40,7 @@ To deploy this project:
  
 </div>
 
-
-!(https://github.com/seanFlutter/Resources/blob/main/Uber-bolt-lyft/lyft%20rider%20demo.gif)
+ <img alt="GIF" src="https://github.com/abhisheknaiidu/abhisheknaiidu/blob/master/code.gif?raw=true" width="200" />
   
 ## Tech Stack
 
